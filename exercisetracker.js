@@ -15,8 +15,11 @@ function gps_distance(lat1, lon1, lat2, lon2)
     return d;
 }
 
-document.addEventListener("deviceready", function(){
-	
+document.addEventListener("deviceready", updateNetworkStatus);
+$("#home_network_button").live('click',updateNetworkStatus);
+
+function updateNetworkStatus ()
+{	
 	if(navigator.network.connection.type == Connection.NONE){
 		$("#home_network_button").text('No Internet Access')
 								 .attr("data-icon", "delete")
@@ -43,7 +46,7 @@ document.addEventListener("deviceready", function(){
 								 .button('refresh');
 	}
 
-});
+}
 
 
 var track_id = '';      // Name/ID of the exercise
