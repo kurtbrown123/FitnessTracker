@@ -22,6 +22,26 @@ document.addEventListener("deviceready", function(){
 								 .attr("data-icon", "delete")
 								 .button('refresh');
 	}
+	else if(navigator.network.connection.type == Connection.WIFI){
+		$("#home_network_button").text('Wifi Internet Access')
+								 .attr("data-icon", "delete")
+								 .button('refresh');
+	}
+	else if(navigator.network.connection.type == Connection.CELL_4G){
+		$("#home_network_button").text('4G Internet Access')
+								 .attr("data-icon", "delete")
+								 .button('refresh');
+	}
+	else if(navigator.network.connection.type == Connection.CELL_3G){
+		$("#home_network_button").text('3G Internet Access')
+								 .attr("data-icon", "delete")
+								 .button('refresh');
+	}
+	else {
+		$("#home_network_button").text('Internet Access')
+								 .attr("data-icon", "delete")
+								 .button('refresh');
+	}
 
 });
 
