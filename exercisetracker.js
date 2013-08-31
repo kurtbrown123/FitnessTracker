@@ -16,7 +16,9 @@ function gps_distance(lat1, lon1, lat2, lon2)
 }
 
 document.addEventListener("deviceready", updateNetworkStatus);
-$("#home_network_button").live('click',updateNetworkStatus);
+$("#home_network_button").live('click',function(){
+$("#home_network_button").text = "clicked me";
+});
 
 function updateNetworkStatus ()
 {	
